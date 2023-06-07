@@ -24,53 +24,53 @@ public class VetsServiceImpl implements VetsService{
 		return vetsRepository.save(vets);
 	}
 	
-	//public Vets update(Vets vets) {
-	//	return vetsRepository.save(vets);
-	//}
+	public Vets update(Vets vets) {
+		return vetsRepository.save(vets);
+	}
 
-	//@Override
-	//public void delete(Integer id) throws VetNotFoundException{
+	@Override
+	public void delete(Integer id) throws VetNotFoundException{
 
-	//	Vets vets = findById(id);
-	//	vetsRepository.delete(vets);
+		Vets vets = findById(id);
+		vetsRepository.delete(vets);
 
-	//}
+	}
 	
-	//@Override
-	//public Vets findById(Integer id) throws VetNotFoundException {
+	@Override
+	public Vets findById(Integer id) throws VetNotFoundException {
 
-	//	Optional<Vets> vets = vetsRepository.findById(id);
+		Optional<Vets> vets = vetsRepository.findById(id);
 
-	//	if ( !vets.isPresent())
-	//		throw new VetNotFoundException("Record not found...!");
+		if ( !vets.isPresent())
+			throw new VetNotFoundException("Record not found...!");
 			
-	//	return vets.get();
-	//}
+		return vets.get();
+	}
 
-	//@Override
-	//public List<Vets> findByFirstName(String first_name) {
+	@Override
+	public List<Vets> findByFirstName(String first_name) {
 
-	//	List<Vets> vets = vetsRepository.findByFirstName(first_name);
+		List<Vets> vets = vetsRepository.findByFirstName(first_name);
 
-	//	vets.stream().forEach(pet -> log.info("" + pet));
+		vets.stream().forEach(pet -> log.info("" + pet));
 
-	//	return vets;
-	//}
+		return vets;
+	}
 
-	//@Override
-	//public List<Vets> findById(int id) {
+	@Override
+	public List<Vets> findById(int id) {
 
-	//	List<Vets> vets = vetsRepository.findById(id);
+		List<Vets> vets = vetsRepository.findById(id);
 
-	//	vets.stream().forEach(vet -> log.info("" + vet));
+		vets.stream().forEach(vet -> log.info("" + vet));
 
-	//	return vets;
-	//}
+		return vets;
+	}
 
-	//@Override
-	//public List<Vets> findAll() {
+	@Override
+	public List<Vets> findAll() {
 		//
-	//	return vetsRepository.findAll();
+		return vetsRepository.findAll();
 
-	//}
+	}
 }

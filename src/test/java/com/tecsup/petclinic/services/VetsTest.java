@@ -1,18 +1,21 @@
 package com.tecsup.petclinic.services;
 
-import com.tecsup.petclinic.entities.Vets;
-import com.tecsup.petclinic.exception.VetNotFoundException;
-import lombok.extern.slf4j.Slf4j;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.tecsup.petclinic.entities.Vets;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootTest
 @Slf4j
 public class VetsTest {
-
+	
+	@Autowired
 	private VetsService vetsService;
 	@Test
 	 public void testCreateVets() {
@@ -26,9 +29,9 @@ public class VetsTest {
 
         log.info("VETS CREATED :" + vetsCreated);
 
-        assetNotNull(vets.getid());
-        assertEquals(FIRST_NAME, vets.getfirst_name());
-        assertEquals(LAST_NAME, vets.getlast_name());
+        assertNotNull(vets.getId());
+        assertEquals(FIRST_NAME, vets.getFirstName());
+        assertEquals(LAST_NAME, vets.getLastName());
 
     }
 	
